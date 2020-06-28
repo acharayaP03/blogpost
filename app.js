@@ -1,3 +1,4 @@
+const path = require('path')
 const express = require('express')
 const dotenv = require('dotenv');
 
@@ -22,6 +23,9 @@ if(process.env.NODE_ENV === "development"){
 //Handlebars template engine for express
 app.engine('.hbs', exphbs({ defaultLayout: 'main' ,extname: '.hbs'}));
 app.set('view engine', '.hbs');
+
+//For serving static files 
+app.use(express.static(path.join(__dirname, 'public')))
 
 //routes
 app.use('/', route);
