@@ -1,0 +1,14 @@
+.seperator {
+  display: block; }
+  .seperator__main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: center; }
+    .seperator__main::before, .seperator__main::after {
+      content: "";
+      display: inline-block;
+      height: 1px;
+      width: 90%;
+      background-color: #6b6c6e;
+      margin: .5rem 1rem; }
