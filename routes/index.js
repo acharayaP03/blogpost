@@ -6,7 +6,11 @@ const router = express.Router()
 //@route GET 
 
 router.get('/', (req, res) =>{
-    res.render('login')
+    //here we need to specify the render function to use login layout no the main. 
+    // if we dont specify it then it will use main as a default since we have main as a default on app js. 
+    res.render('login', {
+        layout: 'login'
+    })
 })
 
 

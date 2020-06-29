@@ -4,7 +4,7 @@
   "description": "personal blog post website",
   "main": "app.js",
   "scripts": {
-    "watch": "node-sass sass/main.scss public/css/style.css -w",
+    "watch": "node-sass sass/main.scss public/css/customStyles.css -w",
     "start": "cross-env NODE_ENV=production node app",
     "devserver": "cross-env NODE_ENV=development nodemon app",
     "dev": "npm-run-all --parallel devserver watch"
