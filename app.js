@@ -1,15 +1,21 @@
 const path = require('path')
 const express = require('express')
 const dotenv = require('dotenv');
-
-const connectDB = require('./Database/db');
 const morgan = require('morgan');
 const exphbs = require('express-handlebars')// template engine.
-const route = require('./routes/index')
+const passport = require('passport') // for authentication ..
+const session = require('express-session');
+const connectDB = require('./Database/db');
+const route = require('./routes/index');
+const authRoute = require('./routes/auth');
+const { googleAuth } = require('./Controllers/authController')
 
 
 //load the config file.
 dotenv.config({ path: './configs/config.env'});
+
+//Google authentication via passport
+googleAuth(passport);
 
 connectDB()
 
@@ -24,11 +30,24 @@ if(process.env.NODE_ENV === "development"){
 app.engine('.hbs', exphbs({ defaultLayout: 'main' ,extname: '.hbs'}));
 app.set('view engine', '.hbs');
 
+//session
+app.use(session({
+    secret: 'secrect knowledge',
+    resave: false,
+    saveUninitialized: false
+}))
+
+//Passport middleware
+app.use(passport.initialize());
+app.use(passport.session())
+
 //For serving static files 
 app.use(express.static(path.join(__dirname, 'public')))
 
 //routes
 app.use('/', route);
+//if login in with google is clicked then we will redirect to this route.
+app.use('/auth', authRoute);
 
 const PORT = process.env.PORT || 3000;
 
