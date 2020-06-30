@@ -12,3 +12,9 @@
       width: 90%;
       background-color: #6b6c6e;
       margin: .5rem 1rem; }
+
+.profile-img {
+  display: inline-block; }
+  .profile-img img {
+    height: 3.5rem;
+    border-radius: 50%; }
