@@ -11,7 +11,7 @@ exports.googleAuth = function (passport) {
   }, 
   //save it to the database..
   async (accessToken, refreshToken, profile, done) =>{
-    console.log(profile)
+    //console.log(profile)
     const newUser = {
         googleId: profile.id,
         displayName: profile.displayName,
