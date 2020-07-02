@@ -1,7 +1,9 @@
 const express = require('express');
 const router = express.Router()
 
-const { ensureAuth, ensureGuest } = require('../middlewares/authMiddleware')
+const { ensureAuth, ensureGuest } = require('../middlewares/authMiddleware');
+
+const Blogs = require('./../Models/Blogs');
 
 //@desc Login/Landing page
 
@@ -20,12 +22,21 @@ router.get('/', ensureGuest, (req, res) =>{
 
 //@route GET 
 
-router.get('/dashboard', ensureAuth, (req, res) =>{
-    res.render('dashboard', {
-        name : req.user.firstName,
-        image : req.user.image
-    } )
-})
+router.get('/dashboard', ensureAuth, async (req, res) =>{
+    try {
+        //show users their blogs
+        const blogs = await Blogs.find({ user: req.user.id}).lean();
 
+        res.render('dashboard', {
+            name : req.user.firstName,
+            image : req.user.image,
+            blogs
+        } )
+        
+    } catch (err) {
+        console.log(err);
+        res.render('error/500'); // if anything goes wrong, show them error page. 
+    }
+})
 
 module.exports = router;

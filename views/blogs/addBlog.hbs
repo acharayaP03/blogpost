@@ -1,0 +1,59 @@
+
+  <!-- container section start -->
+  <section id="container" class="">
+
+    <!--main content start-->
+        <div class="row">
+          <div class="col-lg-12">
+            <ol class="breadcrumb">
+              <li><i class="fa fa-home"></i><a href="index.html">Home</a></li>
+              <li><i class="icon_document_alt"></i>Blog</li>
+              <li><i class="fa fa-file-text-o"></i>Add new blog</li>
+            </ol>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <section class="panel">
+              <header class="panel-heading">
+               Write your blog
+              </header>
+              <div class="panel-body">
+                <form class="form-horizontal" method="POST" action="/blogs">
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label">Title</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" name="title">
+                    </div>
+                  </div>
+                    <div class="form-group">
+                    <label class="control-label col-lg-2" for="inputSuccess">Selects</label>
+                    <div class="col-lg-10">
+                      <select class="form-control m-bot15" name="status" id="status">
+                            <option value="public" selected>Public</option>
+                            <option value="private">Private</option>
+                        </select>
+                    </div>
+                  </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2">Your blog</label>
+                        <div class="col-sm-10">
+                            <textarea class="form-control ckeditor" name="body" id="body"></textarea>
+                            <script>
+                                CKEDITOR.replace( 'body' );
+                            </script>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-12 ml-auto">
+                            <button type="submit" class="btn btn-primary">Create </button>
+                            <a href="/dashboard" class="btn btn-danger">Cancel</a>
+                        </div>
+                  </div>
+                </form>
+              </div>
+            </section>
+          </div>
+        </div>
+  </section>
+  
