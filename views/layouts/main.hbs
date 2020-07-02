@@ -1,82 +1,22 @@
-{{!-- {{!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/style.css">
-    <title>Blog Me</title>
-</head>
-<body>
-    {{{body}}}
-</body>
-</html>
-
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Creative - Bootstrap 3 Responsive Admin Template">
-  <meta name="author" content="GeeksLabs">
-  <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
+  <meta name="keyword" content="Creative Blogs">
   <link rel="shortcut icon" href="img/favicon.png">
 
-  <title>Blog Me</title>
+  <title>Creative Blogs</title>
 
   <!-- Bootstrap CSS -->
-  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
   <!-- bootstrap theme -->
-  <link href="css/bootstrap-theme.css" rel="stylesheet">
+  <link href="/css/bootstrap-theme.css" rel="stylesheet">
   <!--external css-->
   <!-- font icon -->
-  <link href="css/elegant-icons-style.css" rel="stylesheet" />
-  <link href="css/font-awesome.css" rel="stylesheet" />
-  <!-- Custom styles -->
-  <link href="css/style.css" rel="stylesheet">
-  <link href="css/style-responsive.css" rel="stylesheet" />
-
-  <!-- HTML5 shim and Respond.js IE8 support of HTML5 -->
-  <!--[if lt IE 9]>
-    <script src="js/html5shiv.js"></script>
-    <script src="js/respond.min.js"></script>
-    <![endif]-->
-
-    <!-- =======================================================
-      Theme Name: NiceAdmin
-      Theme URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-      Author: BootstrapMade
-      Author URL: https://bootstrapmade.com
-    ======================================================= -->
-</head>
-
-<body class="login-img3-body">
-    {{{body}}}
-</body>
-
-</html> --}}
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Creative - Bootstrap 3 Responsive Admin Template">
-  <meta name="author" content="GeeksLabs">
-  <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
-  <link rel="shortcut icon" href="img/favicon.png">
-
-  <title>Creative - Bootstrap Admin Template</title>
-
-  <!-- Bootstrap CSS -->
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <!-- bootstrap theme -->
-  <link href="css/bootstrap-theme.css" rel="stylesheet">
-  <!--external css-->
-  <!-- font icon -->
-  <link href="css/elegant-icons-style.css" rel="stylesheet" />
-  <link href="css/font-awesome.min.css" rel="stylesheet" />
+  <link href="/css/elegant-icons-style.css" rel="stylesheet" />
+  <link href="/css/font-awesome.min.css" rel="stylesheet" />
   <!-- full calendar css-->
   <link href="assets/fullcalendar/fullcalendar/bootstrap-fullcalendar.css" rel="stylesheet" />
   <link href="assets/fullcalendar/fullcalendar/fullcalendar.css" rel="stylesheet" />
@@ -87,20 +27,15 @@
   <link href="css/jquery-jvectormap-1.2.2.css" rel="stylesheet">
   <!-- Custom styles -->
   <link rel="stylesheet" href="css/fullcalendar.css">
-  <link href="css/widgets.css" rel="stylesheet">
-  <link href="css/style.css" rel="stylesheet">
-  <link href="css/style-responsive.css" rel="stylesheet" />
-  <link href="css/xcharts.min.css" rel=" stylesheet">
-  <link href="css/jquery-ui-1.10.4.min.css" rel="stylesheet">
+  <link href="/css/widgets.css" rel="stylesheet">
+  <link href="/css/style.css" rel="stylesheet">
+  <link href="/css/style-responsive.css" rel="stylesheet" />
+  <link href="/css/xcharts.min.css" rel=" stylesheet">
+  <link href="/css/jquery-ui-1.10.4.min.css" rel="stylesheet">
 
+  <link href="/css/customStyles.css" rel="stylesheet">
+  <script src="https://cdn.ckeditor.com/4.9.1/standard/ckeditor.js"></script>
 
-    <link href="css/customStyles.css" rel="stylesheet">
-  <!-- =======================================================
-    Theme Name: NiceAdmin
-    Theme URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-    Author: BootstrapMade
-    Author URL: https://bootstrapmade.com
-  ======================================================= -->
 </head>
 
 <body>
@@ -109,9 +44,6 @@
 
     {{!-- Header partial --}}
     {{> _header}}
-   
-    <!--header end-->
-
     <!--sidebar start-->
     {{!-- <aside>
       <div id="sidebar" class="nav-collapse ">
@@ -194,103 +126,10 @@
     <!--sidebar end-->
 
     <!--main content start-->
-    <section id="container-fluid">
+    <section id="container-fluid p-2">
       <section class="wrapper">
         <!--overview start-->
-        <div class="row">
-          <div class="col-lg-12">
-            <h3 class="page-header">Dashboard</h3>
-            <ol class="breadcrumb">
-              <li><i class="fa fa-home"></i><a href="index.html">Home</a></li>
-              <li><i class="fa fa-laptop"></i>Dashboard</li>
-            </ol>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-            <div class="info-box blue-bg">
-              <i class="fa fa-cloud-download"></i>
-              <div class="count">6.674</div>
-              <div class="title">Download</div>
-            </div>
-            <!--/.info-box-->
-          </div>
-          <!--/.col-->
-
-          <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-            <div class="info-box brown-bg">
-              <i class="fa fa-shopping-cart"></i>
-              <div class="count">7.538</div>
-              <div class="title">Purchased</div>
-            </div>
-            <!--/.info-box-->
-          </div>
-          <!--/.col-->
-
-          <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-            <div class="info-box dark-bg">
-              <i class="fa fa-thumbs-o-up"></i>
-              <div class="count">4.362</div>
-              <div class="title">Order</div>
-            </div>
-            <!--/.info-box-->
-          </div>
-          <!--/.col-->
-
-          <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-            <div class="info-box green-bg">
-              <i class="fa fa-cubes"></i>
-              <div class="count">1.426</div>
-              <div class="title">Stock</div>
-            </div>
-            <!--/.info-box-->
-          </div>
-          <!--/.col-->
-
-        </div>
-        <!--/.row-->
-        {{#if blogs}}
-          <div class="col-lg-9 col-md-12">
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <h2><i class="fa fa-flag-o red"></i><strong>Registered Users</strong></h2>
-                <div class="panel-actions">
-                  <a href="index.html#" class="btn-setting"><i class="fa fa-rotate-right"></i></a>
-                  <a href="index.html#" class="btn-minimize"><i class="fa fa-chevron-up"></i></a>
-                  <a href="index.html#" class="btn-close"><i class="fa fa-times"></i></a>
-                </div>
-              </div>
-              <div class="panel-body">
-                <table class="table bootstrap-datatable countries">
-                  <thead>
-                    <tr>
-                      <th></th>
-                      <th>Title</th>
-                      <th>Date</th>
-                      <th>Status</th>
-                      <th></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {{#each blogs}}
-                    <tr>
-                      <td><a href="/blogs/{{_id}}">{{title}}</a></td>
-                      <td>{{createdAt}}</td>
-                      <td><span class="badge badge-primary">{{status}}</span></td>
-                      <td></td>
-                    </tr>
-                    {{/each}}
-                  </tbody>
-                </table>
-              </div>
-
-            </div>
-
-          </div>
-        {{else}}
-          <p>You have no blogs to view yet</p>
-        {{/if}}
+        {{{body}}}
         {{!-- <div class="row">
 
           <!--/col-->
@@ -351,14 +190,7 @@
           <!--/col-->
 
         </div> --}}
-
-
-
         <!-- statics end -->
-
-
-
-
         <!-- project team & activity start -->
         {{!-- <div class="row">
           <div class="col-md-4 portlets">
@@ -680,20 +512,17 @@
 
         </div> --}}
         <!-- project team & activity end -->
-      {{> _add_btn}}
+     
+      </section>
+      <section class="wrapper">
+        <div class="row">
+          <div class="col-sm-12">
+            {{> _add_btn}}
+          </div>
+        </div>
       </section>
       
-      <div class="text-right">
-        <div class="credits">
-          <!--
-            All the links in the footer should remain intact.
-            You can delete the links only if you purchased the pro version.
-            Licensing information: https://bootstrapmade.com/license/
-            Purchase the pro version form: https://bootstrapmade.com/buy/?theme=NiceAdmin
-          -->
-          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-        </div>
-      </div>
+      
     </section>
     <!--main content end-->
   </section>

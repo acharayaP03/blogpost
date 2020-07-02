@@ -11,7 +11,10 @@ const MongoStore = require('connect-mongo')(session);
 const connectDB = require('./Database/db');
 const route = require('./routes/index');
 const authRoute = require('./routes/auth');
-const { googleAuth } = require('./Controllers/authController')
+const blogsRoute = require('./routes/blogs');
+const { googleAuth } = require('./Controllers/authController');;
+//hooking our helper 
+const { formateDate } = require('./Helpers/hbs')
 
 
 //load the config file.
@@ -20,9 +23,14 @@ dotenv.config({ path: './configs/config.env'});
 //Google authentication via passport
 googleAuth(passport);
 
+//Database connection..
 connectDB()
 
 const app = express();
+
+// To recieve form data.
+app.use(express.urlencoded({ extended: false}));
+app.use(express.json())
 
 //Logger 
 if(process.env.NODE_ENV === "development"){
@@ -30,7 +38,7 @@ if(process.env.NODE_ENV === "development"){
 }
 
 //Handlebars template engine for express
-app.engine('.hbs', exphbs({ defaultLayout: 'main' ,extname: '.hbs'}));
+app.engine('.hbs', exphbs({ helpers: { formateDate } ,defaultLayout: 'main' ,extname: '.hbs'}));
 app.set('view engine', '.hbs');
 
 //session
@@ -54,6 +62,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.use('/', route);
 //if login in with google is clicked then we will redirect to this route.
 app.use('/auth', authRoute);
+app.use('/blogs', blogsRoute);
 
 const PORT = process.env.PORT || 3000;
 

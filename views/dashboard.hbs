@@ -1,1 +1,89 @@
-<h1>Dashboard here</h1>
+        <div class="row">
+          <div class="col-lg-12">
+            <h3 class="page-header">Dashboard</h3>
+            <ol class="breadcrumb">
+              <li><i class="fa fa-home"></i><a href="index.html">Home</a></li>
+              <li><i class="fa fa-laptop"></i>Dashboard</li>
+            </ol>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+            <div class="info-box blue-bg">
+              <i class="fa fa-cloud-download"></i>
+              <div class="count">6.674</div>
+              <div class="title">Download</div>
+            </div>
+            <!--/.info-box-->
+          </div>
+          <!--/.col-->
+
+          <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+            <div class="info-box brown-bg">
+              <i class="fa fa-shopping-cart"></i>
+              <div class="count">7.538</div>
+              <div class="title">Purchased</div>
+            </div>
+            <!--/.info-box-->
+          </div>
+          <!--/.col-->
+
+          <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+            <div class="info-box dark-bg">
+              <i class="fa fa-thumbs-o-up"></i>
+              <div class="count">4.362</div>
+              <div class="title">Order</div>
+            </div>
+            <!--/.info-box-->
+          </div>
+          <!--/.col-->
+
+          <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+            <div class="info-box green-bg">
+              <i class="fa fa-cubes"></i>
+              <div class="count">1.426</div>
+              <div class="title">Stock</div>
+            </div>
+            <!--/.info-box-->
+          </div>
+          <!--/.col-->
+
+        </div>
+        <!--/.row-->
+        {{#if blogs}}
+          <div class="col-lg-9 col-md-12">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h2><i class="fa fa-flag-o red"></i><strong>Public Blogs</strong></h2>
+              </div>
+                <table class="table bootstrap-datatable countries">
+                  <thead>
+                    <tr>
+                      <th></th>
+                      <th>Title</th>
+                      <th>Date</th>
+                      <th>Status</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {{#each blogs}}
+                    <tr>
+                        <td></td>
+                      <td><a href="/blogs/{{_id}}">{{title}}</a></td>
+                      <td>{{formateDate createdAt 'MMMM Do YYYY, h:mm:ss a'}}</td>
+                      <td><span class="badge badge-primary">{{status}}</span></td>
+                      <td></td>
+                    </tr>
+                    {{/each}}
+                  </tbody>
+                </table>
+            
+
+            </div>
+
+          </div>
+        {{else}}
+          <p>You have no blogs to view yet</p>
+        {{/if}}
