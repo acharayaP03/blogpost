@@ -14,7 +14,7 @@ const authRoute = require('./routes/auth');
 const blogsRoute = require('./routes/blogs');
 const { googleAuth } = require('./Controllers/authController');;
 //hooking our helper 
-const { formateDate } = require('./Helpers/hbs')
+const { formateDate, truncate, stripTags } = require('./Helpers/hbs')
 
 
 //load the config file.
@@ -38,7 +38,7 @@ if(process.env.NODE_ENV === "development"){
 }
 
 //Handlebars template engine for express
-app.engine('.hbs', exphbs({ helpers: { formateDate } ,defaultLayout: 'main' ,extname: '.hbs'}));
+app.engine('.hbs', exphbs({ helpers: { formateDate, stripTags, truncate } ,defaultLayout: 'main' ,extname: '.hbs'}));
 app.set('view engine', '.hbs');
 
 //session

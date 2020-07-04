@@ -2,7 +2,7 @@
   <!-- container section start -->
   <section id="container" class="">
 
-    <!--main content start-->
+    <!--main content start
         <div class="row">
           <div class="col-lg-12">
             <ol class="breadcrumb">
@@ -26,22 +26,16 @@
                       <input type="text" class="form-control" name="title">
                     </div>
                   </div>
-                    <div class="form-group">
+                  <div class="form-group">
                     <label class="control-label col-lg-2" for="inputSuccess">Selects</label>
                     <div class="col-lg-10">
-                      <select class="form-control m-bot15" name="status" id="status">
-                            <option value="public" selected>Public</option>
-                            <option value="private">Private</option>
-                        </select>
+                     
                     </div>
                   </div>
                     <div class="form-group">
                         <label class="control-label col-sm-2">Your blog</label>
                         <div class="col-sm-10">
-                            <textarea class="form-control ckeditor" name="body" id="body"></textarea>
-                            <script>
-                                CKEDITOR.replace( 'body' );
-                            </script>
+                            
                         </div>
                     </div>
                     <div class="form-group">
@@ -54,6 +48,92 @@
               </div>
             </section>
           </div>
-        </div>
+        </div>-->
+          <div class="col-md-10 portlets">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <div class="pull-left">Quick Post</div>
+                <div class="widget-icons pull-right">
+                  <a href="#" class="wminimize"><i class="fa fa-chevron-up"></i></a>
+                  <a href="#" class="wclose"><i class="fa fa-times"></i></a>
+                </div>
+                <div class="clearfix"></div>
+              </div>
+              <div class="panel-body">
+                <div class="padd">
+
+                  <div class="form quick-post">
+                    <!-- Edit profile form (not working)-->
+                    <form class="form-horizontal" method="POST"  action="/blogs">>
+                      <!-- Title -->
+                      <div class="form-group">
+                        <label class="control-label col-lg-2" for="title">Title</label>
+                        <div class="col-lg-10">
+                          <input type="text" class="form-control" id="title" name="title">
+                        </div>
+                      </div>
+                      <!-- Cateogry -->
+                      <div class="form-group">
+                        <label class="control-label col-lg-2">Category</label>
+                        <div class="col-lg-10">
+                          <select class="form-control" name="category">
+                            <option value="general" selected>General</option>
+                            <option value="news">News</option>
+                            <option value="media">Media</option>
+                            <option value="funny">Funny</option>
+                          </select>
+                        </div>
+                      </div>
+                      {{!-- status --}}
+                      <div class="form-group">
+                        <label class="control-label col-lg-2">Status</label>
+                        <div class="col-lg-10">
+                           <select class="form-control m-bot15" name="status" id="status">
+                            <option value="public" selected>Public</option>
+                            <option value="private">Private</option>
+                        </select>
+                        </div>
+                      </div>
+                      <!-- Tags -->
+                      <div class="form-group">
+                        <label class="control-label col-lg-2" for="tags">Tags</label>
+                        <div class="col-lg-10">
+                          <input type="text" class="form-control" id="tags" name="tags">
+                        </div>
+                      </div>
+
+                      <!-- Content -->
+                      <div class="form-group">
+                        <label class="control-label col-lg-2" for="content">Content</label>
+                        <div class="col-lg-10">
+                          <textarea class="form-control ckeditor" name="body" id="body"></textarea>
+                            <script>
+                                CKEDITOR.replace( 'body' );
+                            </script>
+                        </div>
+                      </div>
+
+                      <!-- Buttons -->
+                      <div class="form-group">
+                        <!-- Buttons -->
+                        <div class="col-lg-offset-2 col-lg-10">
+                          <button type="submit" class="btn btn-primary">Publish</button>
+                          <button type="submit" class="btn btn-danger">Save Draft</button>
+                          <button type="reset" class="btn btn-default">Reset</button>
+                           <a href="/dashboard" class="btn btn-danger pull-right">Cancel</a>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+
+
+                </div>
+                <div class="widget-foot">
+                  <!-- Footer goes here -->
+                </div>
+              </div>
+            </div>
+
+          </div>
   </section>
   

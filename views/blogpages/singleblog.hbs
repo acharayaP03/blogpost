@@ -1,0 +1,53 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="post-box">
+              <div class="post-thumb">
+                <img src="/img/post-1.jpg" class="img-fluid" alt="">
+              </div>
+       
+              <div class="post-meta">
+                <h1 class="article-title">{{blogs.title}}</h1>
+                <ul>
+                  <li>
+                    <span class="ion-ios-person"></span>
+                    <a href="#">{{user.displayName}}</a>
+                  </li>
+                  <li>
+                    <span class="ion-pricetag"></span>
+                    <a href="#">{{blogs.tags}}</a>
+                  </li>
+                  <li>
+                    <span class="ion-chatbox"></span>
+                    <a href="#">14</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="article-content">
+                {{ stripTags blogs.body}}
+                <blockquote class="blockquote">
+                  <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                </blockquote>
+              </div>
+            </div>
+        </div>
+        <div class="widget-sidebar">
+            <h5 class="sidebar-title">Recent Post</h5>
+            <div class="sidebar-content">
+                {{#each blogs}}
+                <ul class="list-sidebar">
+                    <li>
+                        <a href="#">{{title}}</a>
+                    </li>
+                </ul>
+                {{else}}
+                <ul class="list-sidebar">
+                    <li>
+                        <p>Nothing new today.</p>
+                    </li>
+                </ul>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</div>

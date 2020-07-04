@@ -6,6 +6,11 @@ const BlogsSchema = new mongoose.Schema({
         required: true,
         trim: true
     },
+    category: {
+        type: String,
+        default: 'general',
+        enum: ['general', 'news', 'media', 'funny']
+    },
     body: {
         type: String,
         required: true
@@ -15,6 +20,10 @@ const BlogsSchema = new mongoose.Schema({
         default: 'public',
         enum: ['public', 'private']
     },
+    tags: {
+        type: String,
+        default: 'none'
+    }, 
     user: {
         type: mongoose.Schema.Types.ObjectId,  // this will let connect to the user model
         ref: 'User'
