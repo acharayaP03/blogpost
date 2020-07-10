@@ -11,7 +11,7 @@
                 <ul>
                   <li>
                     <span class="ion-ios-person"></span>
-                    <a href="#">{{user.displayName}}</a>
+                    <a href="#">{{blogs.user.displayName}}</a>
                   </li>
                   <li>
                     <span class="ion-pricetag"></span>
@@ -32,21 +32,13 @@
             </div>
         </div>
         <div class="widget-sidebar">
-            <h5 class="sidebar-title">Recent Post</h5>
+            <h5 class="sidebar-title">Recent Post </h5>
             <div class="sidebar-content">
-                {{#each blogs}}
                 <ul class="list-sidebar">
                     <li>
-                        <a href="#">{{ blogs.title}}</a>
+                        <a href="/blog/user/{{blogs.user._id}}">{{blogs.user.displayName}}</a>
                     </li>
                 </ul>
-                {{else}}
-                <ul class="list-sidebar">
-                    <li>
-                        <p>Nothing new today.</p>
-                    </li>
-                </ul>
-                {{/each}}
             </div>
         </div>
     </div>
