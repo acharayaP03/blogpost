@@ -99,7 +99,7 @@
                       <th>Category</th>
                       <th>Tags</th>
                        <th>Status</th>
-                      <th></th>
+                      <th>Action</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -111,7 +111,7 @@
                       <td><span class="badge badge-primary">{{category}}</span></td>
                       <td><span class="badge badge-primary">{{tags}}</span></td>
                       <td><span class="badge badge-primary">{{status}}</span></td>
-                      <td></td>
+                      <td><a href="/blogs/edit/{{_id}}" class="btn btn-info mr-1 text-center text-white"><i class="fa fa-edit text-white"></i></a><a href="/blogs/delete/{{_id}}" class="btn btn-danger"><i class="fa fa-trash-o"></i></a></td>
                     </tr>
                     {{/each}}
                   </tbody>
