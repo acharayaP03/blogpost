@@ -8,16 +8,14 @@ const Blogs = require('./../Models/Blogs');
 //@route GET 
 
 router.get('/',  async (req, res) =>{
+    console.log(`inside ${req.url}`)
     //get all the public blogs and display it to the main blog page. 
-    console.log('Inside main blog page')
-    console.log(req.params.id)
     try {
         const blogs = await Blogs.find({ status : 'public'}).populate('user').sort({ createdAt: 'desc'}).lean();
  
         //here we need to specify the render function to use login layout no the main. 
         // if we dont specify it then it will use main as a default since we have main as a default on app js. 
-        console.log(blogs)
-       
+        console.log(blogs.user)
         res.render('blogpages/main', {
             blogs, 
             layout: 'mainblog'
@@ -32,14 +30,37 @@ router.get('/',  async (req, res) =>{
 
 //@route GET 
 
-router.get('/blog/:id', async (req, res) =>{
+router.get('/:id', async (req, res) =>{
     //get all the public blogs and display it to the main blog page. 
-    console.log('I here')
+
     try {
-        const blogs = await Blogs.findById(req.params.id).lean();
-        //here we need to specify the render function to use login layout no the main. 
-        // if we dont specify it then it will use main as a default since we have main as a default on app js. 
+        let blogs = await Blogs.findById(req.params.id).populate('user').lean();
+
+        if(!blogs){
+            return res.render('error/404');
+        }
+       
         res.render('blogpages/singleblog', {
+            blogs, 
+            layout: 'mainblog'
+        })
+    } catch (err) {
+        console.log(err);
+        res.render('error/500');
+    }
+})
+
+
+//@desc get all story from same user
+
+//@route GET 
+
+router.get('/user/:userId', async (req, res) =>{
+   
+    try {
+        let blogs = await Blogs.find({ user : req.params.userId, status: 'public'}).populate('user').lean()
+
+        res.render('blogpages/main', {
             blogs, 
             layout: 'mainblog'
         })

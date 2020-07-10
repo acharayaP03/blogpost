@@ -81,7 +81,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 //routes
 app.use('/', route);
-//app.use('/blog', blogPageRoute);
+app.use('/blog', blogPageRoute);
 //if login in with google is clicked then we will redirect to this route.
 app.use('/auth', authRoute);
 app.use('/blogs', blogsRoute);
