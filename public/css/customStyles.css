@@ -18,3 +18,13 @@
   .profile-img img {
     height: 3.5rem;
     border-radius: 50%; }
+
+.personal-task tbody tr td a i {
+  font-size: 16px;
+  color: #fff;
+  /* color: #c7cbd4; */
+  position: relative;
+  right: 0;
+  top: 0; }
+  .personal-task tbody tr td a i:hover {
+    color: #000; }

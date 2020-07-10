@@ -1,0 +1,44 @@
+          <div class="col-md-12">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h2><i class="fa fa-flag-o red"></i><strong>Delete Blogs</strong></h2>
+              </div>
+                {{!--  --}}
+
+                <table class="table bootstrap-datatable personal-task">
+                  <thead>
+                    <tr>
+                      <th></th>
+                      <th>Date</th>
+                       <th>Title</th>
+                      <th>Category</th>
+                      <th>Tags</th>
+                       <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td></td>
+                      <td>{{formateDate createdAt 'MMMM Do YYYY, h:mm:ss a'}}</td>
+                      <td><a href="/blogs/{{_id}}">{{blog.title}}</a></td>
+                      <td><span class="badge badge-primary">{{blog.category}}</span></td>
+                      <td><span class="badge badge-primary">{{blog.tags}}</span></td>
+                      <td><span class="badge badge-primary">{{blog.status}}</span></td>
+                    </tr>
+                    
+                  </tbody>
+                </table>
+            </div>
+          </div>
+          <div class="col-md-12">
+              <div class="form-row">
+                  <form action="/blogs/{{blog._id}}" method="POST">
+                      <input type="hidden" name="_method" value="DELETE">
+                        <div class="form-group">   
+                            <div class="col-lg-12 p-2">
+                                <button class="btn btn-danger" type="submit">Delete Post</button>
+                            </div>                     
+                        </div>
+                  </form>
+              </div>
+          </div>

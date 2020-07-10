@@ -24,7 +24,7 @@
                 </ul>
               </div>
               <div class="article-content">
-                {{ stripTags blogs.body}}
+                {{{ stripNBSP blogs.body }}}
                 <blockquote class="blockquote">
                   <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
                 </blockquote>
@@ -37,7 +37,7 @@
                 {{#each blogs}}
                 <ul class="list-sidebar">
                     <li>
-                        <a href="#">{{title}}</a>
+                        <a href="#">{{ blogs.title}}</a>
                     </li>
                 </ul>
                 {{else}}

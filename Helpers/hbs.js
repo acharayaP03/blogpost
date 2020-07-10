@@ -16,5 +16,25 @@ module.exports = {
       },
     stripTags: function (input) {
         return input.replace(/&nbsp;|<(?:.|\n)*?>/ig, ' ')
-    }
+    },
+    stripNBSP: function(input){
+      return input.replace(/&nbsp;/ig, " ");
+    },
+    getAllblogs: function(blogUser, loggedUser, blogId){
+      if( blogUser._id.toString() === loggedUser._id.toString()){
+        return blogId;
+      }
+    },
+    select: function (selected, options) {
+      return options
+        .fn(this)
+        .replace(
+          new RegExp(' value="' + selected + '"'),
+          '$& selected="selected"'
+        )
+        .replace(
+          new RegExp('>' + selected + '</option>'),
+          ' selected="selected"$&'
+        )
+    },
 }
